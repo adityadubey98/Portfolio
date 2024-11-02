@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email">
+
+            <!-- <label for="phone">Your Contact Number</label>
+            <input type="tel" id="phone" name="number" placeholder="number"required pattern="[0-9]{10}"> -->
+            <label for="countryCode">Country Code</label>
+            <div class="input-group">
+                <select id="countryCode" name="countryCode" required>
+                    <option value="">Select Country Code</option>
+                    <option value="+1">USA (+1)</option>
+                    <option value="+44">UK (+44)</option>
+                    <option value="+91">India (+91)</option>
+                    <option value="+61">Australia (+61)</option>
+                    <option value="+81">Japan (+81)</option>
+                    <option value="+49">Germany (+49)</option>
+                    <option value="+33">France (+33)</option>
+                    <!-- Add more country codes as needed -->
+                </select>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" maxlength="10" pattern="[0-9]{10}" title="Please enter a 10-digit phone number without the country code">
+            </div>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error" class="error"></p>
+    </div>
+    <script src="contact.js"></script>
+</body>
+</html>
